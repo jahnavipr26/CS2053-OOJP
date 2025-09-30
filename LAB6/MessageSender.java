@@ -2,17 +2,16 @@ package lab002;
 
 public class MessageSender {
 
-    // synchronized method to send a message
     public synchronized void sendMessage(String msg) {
         for (int i = 0; i < msg.length(); i++) {
             System.out.print(msg.charAt(i));
             try {
-                Thread.sleep(50); // small delay to simulate work and possible mixing
+                Thread.sleep(50); 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        System.out.println(); // move to next line after full message
+        System.out.println(); 
     }
 
     public static void main(String[] args) {
